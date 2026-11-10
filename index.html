@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fun Times</title>
+    <meta name="description" content="Say hello, share what you like to do, and get a little confetti.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:opsz,wght@9..144,560&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="stage">
+      <section class="card" aria-labelledby="page-title">
+        <p class="brand">Fun Times</p>
+        <h1 id="page-title">Tell us a little about you</h1>
+        <p class="lede">Two quick answers, then a hello worth celebrating.</p>
+
+        <form id="hello-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Ada Lovelace"
+              required
+              aria-describedby="form-error">
+          </div>
+
+          <div class="field">
+            <label for="hobby">What do you like to do?</label>
+            <textarea
+              id="hobby"
+              name="hobby"
+              rows="3"
+              placeholder="Sketching cities, baking bread, long walks"
+              required
+              aria-describedby="form-error"></textarea>
+          </div>
+
+          <p id="form-error" class="error" role="alert" hidden></p>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <p id="greeting" class="greeting" role="status" aria-live="polite" hidden></p>
+      </section>
+    </main>
+  </body>
+</html>
